@@ -2,8 +2,9 @@
 Question1();
 Question2();
 Question3();
+Question4();
 
-// #1: Print the output of adding two numbers from user input
+// #1: Print the output of adding two numbers from user input.
 static void Question1()
 {
     Console.WriteLine("Enter a number: ");
@@ -49,4 +50,54 @@ static void Question3()
     table.AddRow("double", sizeof(double), double.MinValue, double.MaxValue);
     table.AddRow("decimal", sizeof(decimal), decimal.MinValue, decimal.MaxValue);
     Console.WriteLine(table);
+}
+
+// #4: Create a 5 function (+, -, *, /, and modulus) calculator. This calculator should
+// loop until ‘esc’ is typed. For example, I should be asked for num 1, then some operation
+// (+, -, *, /, and modulus) to another num 2. Provide the results, and then provide a way
+// to esc the program or do another operation (+, -, *, /, and modulus) to the result.
+static void Question4()
+{
+    string input;
+    do
+    {
+        Console.WriteLine("Enter a number: ");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"Enter an operator(+, -, *, /, %): ");
+        string symbol = Console.ReadLine();
+        int num2;
+        switch(symbol)
+        {
+            case "+":
+                Console.WriteLine("Enter a number to add: ");
+                num2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"{num1} + {num2} = {(num1 + num2)}");
+                break;
+            case "-":
+                Console.WriteLine("Enter a number to subtract: ");
+                num2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"{num1} - {num2} = {(num1 - num2)}");
+                break;
+            case "*":
+                Console.WriteLine("Enter a number to multiply by: ");
+                num2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"{num1} * {num2} = {(num1 * num2)}");
+                break;
+            case "/":
+                Console.WriteLine("Enter a number to divide by: ");
+                num2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"{num1} / {num2} = {(num1 / num2)}");
+                break;
+            case "%":
+                Console.WriteLine("Enter a number to mod by: "); // honestly not sure if this is correct but whatever
+                num2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"{num1} % {num2} = {(num1 % num2)}");
+                break;
+            default:
+                Console.WriteLine("Invalid operator.");
+                break;
+        }
+        Console.WriteLine("Escape or continue(esc, cont)? ");
+        input = Console.ReadLine();
+    } while (input == "cont");
 }
