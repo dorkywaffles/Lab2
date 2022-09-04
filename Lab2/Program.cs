@@ -84,12 +84,12 @@ static void Question4()
                 Console.WriteLine($"{num1} * {num2} = {(num1 * num2)}");
                 break;
             case "/":
-                Console.WriteLine("Enter a number to add by: ");
+                Console.WriteLine("Enter a number to divide by: ");
                 num2 = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine($"{num1} / {num2} = {(num1 / num2)}");
                 break;
             case "%":
-                Console.WriteLine("Enter a number to add by: ");
+                Console.WriteLine("Enter a number to mod by: "); // honestly not sure if this is correct but whatever
                 num2 = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine($"{num1} % {num2} = {(num1 % num2)}");
                 break;
